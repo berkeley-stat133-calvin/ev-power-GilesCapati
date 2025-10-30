@@ -4,6 +4,7 @@ title-prefix: Project 4
 format: stat133handout-typst
 ---
 
+Unfortunately, I was not able to complete this project due to being sick for a week and a half
 ### **Main Research Question**
 
 *Electric vehicles reduce direct emissions, but does the electricity used to charge them actually come from clean sources?\
@@ -43,6 +44,18 @@ Brainstorm some questions about the datasets that you would like to answer throu
 
 -   You should be able to explore each question using the datasets provided. Try to come up with some creative questions that you are interested in learning the answers to!
 
+
+```{r}
+# I will choosing the question: "How has the share of renewable energy changed from 2021-2023 across states?"
+
+# These are the necessary libraries for this project
+library(tidyverse)
+library(readr)
+
+price <- read_csv("data/av-energy-price-2021-2023.csv")
+price
+```
+
 ### **Part 2: Data Preparation & Cleaning**
 
 Load and clean your datasets to prepare for analysis.
@@ -52,6 +65,12 @@ Load and clean your datasets to prepare for analysis.
     -   Standardize column names
 
     -   Ensure state names are consistent across files
+
+```{r}
+price <- data.frame(price)
+names(price)
+
+```
 
 ### **Part 3: Joining / Pivoting Datasets for Analysis**
 

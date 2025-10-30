@@ -19,7 +19,12 @@ energy_raw <- separate(
 You are given a messy dataset of energy sources with inconsistent units and spacing.
 
 ```{r}
+library(tidyverse)
 energy_sources <- c("Solar (MWh)", "Wind (GWh)", "Coal (MWh)", "Hydro (kWh)")
+
+str_view(energy_sources, "[A-Z][a-z]+\\s")
+str_extract(energy_sources,"[A-Z][a-z]+\\s") |>
+  str_extract("[A-Z][a-z]+")
 ```
 
 a.  Use str_detect() to identify all energy sources that contain the substring "Wind" or "Hydro" (hint: use the \| operator in regex).
